@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="../styles/output.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="w-63" src="../assets/logos/logo_sin_fondo._rectangular.PNG" alt="logo Concrete Jungle">
+        </div>
+        
+        <!-- Menú hamburguesa -->
+        <div id="mobile-menu" class="menu-container">
+
+            <button class="menu-toggle lg:hidden block absolute top-6 right-4 hover:transform-[scale(1.2)]" ><img src="../assets/logos/icon-menu.png" alt=""></button>
+            <ul class="menu-links " >
+                <button id="close-menu" class="lg:hidden"><img src="../assets/logos/cerrar-menu.png" alt=""></button>
+                 <!-- Buscador -->
+                  <div class="search-bar">
+                    <input type="search" class="form-control bg-buscador-fondo" placeholder="Buscar productos o categorías..." >
+                    <button type="button" class="shrink-0 p-2" >
+                        <span></span>
+                    </button>
+                    <select aria-label="Filtrar por categoría">
+                        <option value="">Todas las categorías</option> 
+                        <option value="camisetas">Camisetas</option>
+                        <option value="sudaderas">Sudaderas</option>
+                        <option value="pantalones">Pantalones</option>
+                        <option value="zapatillas">Zapatillas</option>
+                        <option value="accesorios">Accesorios</option>
+                    </select>
+                </div>
+                <button id="sticky-cart-desktop" class="sticky-cart carrito-desktop">
+                    <img src="../assets/logos/carrito_blanco.png" alt="Icono carrito de compras">
+                    <span class="cart-count">2</span>
+                </button>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="../index.html">Inicio</a></li>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="#novedades">Novedades</a></li>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="#hombre">Hombre</a></li>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="#mujer">Mujer</a></li>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="../backend/index.php">Administración</a></li>
+                <li><a class=" hover:text-azul-claro hover:underline hover:text-xl" href="#ofertas">Ofertas</a></li>
+                <li><button class="login boton-rojo" onclick="location.href='../backend/forms/login/form_login.php'">Login</button></li>
+            </ul>
+        </div>
+    </header>
+    <main class="p-8 bg-azul-oscuro text-beige">
+        <h1 class="text-3xl font-bold mb-6">Sudadera Streetwear</h1>
+        <div class="product-detail flex flex-col lg:flex-row gap-8">
+            <div class="product-images flex flex-col items-center lg:items-start">
+                <img src="../assets/imagenes/foto1.jpg" alt="Nombre del Producto" class="hover:border-azul-claro w-30 md:w-55 lg:w-60 h-auto rounded-lg shadow-md">
+                <div class="additional-images flex gap-4 mt-2">
+                    <img src="../assets/imagenes/foto-detalle-1-1.png" alt="Imagen adicional 1" class="hover:border-azul-claro w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg shadow-md cursor-pointer">
+                    <img src="../assets/imagenes/foto-detalle-1-2.png" alt="Imagen adicional 2" class="hover:border-azul-claro w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg shadow-md cursor-pointer">
+                    <img src="../assets/imagenes/foto-detalle-1-3.png" alt="Imagen adicional 3" class="hover:border-azul-claro w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg shadow-md cursor-pointer">
+                </div>           
+               
+                <span id="precio">
+                    <p class="text-md mb-2">Precio:</p>
+                    <p class="text-2xl font-bold mb-4">49.99€</p>
+                </span>
+                <nav class="botones flex items-center justify-center flex-wrap gap-4 md:justify-start">
+                    <form action="" class="flex justify-center">
+                        <label for="cantidad" class="font-bold mr-2">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" value="1" min="1" class="w-16 rounded-md p-1 border border-beige">
+                        <button id="añadir-carrito-btn" class="boton-rojo agregar-carrito">Agregar al Carrito</button>
+                    </form>
+                    <button class="boton-rojo ml-4">Comprar Ahora</button>
+                </nav>
+            </div>
+
+            
+            <div class="product-info flex-1 flex-col lg:flex-col-reverse"> 
+                <div class="tallas mb-2 flex gap-2 mt-4">
+                    <form action=""> 
+                        <span class="font-bold">Tallas:</span>
+                        <label class="mr-4">
+                            <input type="radio" name="talla" value="S" class="mr-1"> S
+                        </label>
+                        <label class="mr-4">
+                            <input type="radio" name="talla" value="M" class="mr-1"> M
+                        </label>
+                        <label class="mr-4">
+                            <input type="radio" name="talla" value="L" class="mr-1"> L
+                        </label>
+                        <label class="mr-4">
+                            <input type="radio" name="talla" value="XL" class="mr-1"> XL
+                        </label>
+                    </form>
+                </div>
+                <div class="product-description mb-6">
+                    <p class=" mb-4 lg:text-xl">La sudadera "Concrete Wave" está confeccionada pensando en la calle. Su interior cepillado aporta una suavidad térmica ideal para temporadas medias y frías. Presenta un corte ligeramente oversize que favorece la libertad de movimiento y permite llevarla sola o sobre capas. Detalles cuidados como costuras reforzadas, puños acanalados y capucha con cordón regulable elevan la durabilidad y el confort. El logo bordado en el pecho añade un toque sobrio y premium sin perder la identidad streetwear.</p>
+                    <ul class="list-disc list-inside">
+                        <h3>Materiales:</h3>
+                        <li class="mb-2">80% algodón orgánico.</li>
+                        <li class="mb-2">20% poliéster reciclado.</li>
+                    </ul>
+                </div>
+    
+            </div>    
+                
+            
+        </div>
+        <h2 class="text-2xl font-semibold mt-12 mb-6">Reseñas de Clientes</h2>
+        <section class="reviews flex flex-wrap mt-12 gap-5">
+            
+            <div class="review-item mb-4">
+                <p class="font-bold text-azul-claro">Usuario123</p>
+                <p>¡Me encanta este producto! La calidad es excelente y el diseño es muy moderno.</p>
+                <span class="flex">
+                    <img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_sin_relleno.png" alt="">
+                </span>
+            </div>
+            <div class="review-item mb-4">
+                <p class="font-bold text-azul-claro">Usuario234</p>
+                <p>¡Me encanta este producto! La calidad es excelente y el diseño es muy moderno.</p>
+                <span class="flex">
+                    <img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_sin_relleno.png" alt="">
+                </span>
+            </div>
+             <div class="review-item mb-4">
+                <p class="font-bold text-azul-claro">Usuario234</p>
+                <p>¡Me encanta este producto! La calidad es excelente y el diseño es muy moderno.</p>
+                <span class="flex">
+                    <img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_sin_relleno.png" alt="">
+                </span>
+            </div>
+             <div class="review-item mb-4">
+                <p class="font-bold text-azul-claro">Usuario234</p>
+                <p>¡Me encanta este producto! La calidad es excelente y el diseño es muy moderno.</p>
+                <span class="flex">
+                    <img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_con_relleno.png" alt=""><img class="w-5 h-5" src="../assets/logos/estrella_sin_relleno.png" alt="">
+                </span>
+            </div>
+        </section>
+    </main>  
+    <footer>
+        <div class="footer-content flex justify-between flex-wrap gap-4 p-8 bg-fondo-footer text-beige text-sm">
+            <div class="footer-section">
+                <h3>Sobre Nosotros</h3>
+                <p class="mb-2">Concrete Jungle es tu destino para el mejor streetwear urbano.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li class="mb-2">Email: info@concretejungle.com</li>
+                    <li class="mb-2">Teléfono: +34 900 123 456</li>
+                    <li class="mb-2">Horario: L-V 9:00-18:00</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a class="boton-azul rounded-4xl" href="#instagram" >IG</a>
+                    <a class="boton-azul rounded-4xl" href="#facebook">FB</a>
+                    <a class="boton-azul rounded-4xl" href="#twitter">TW</a>
+                    <a class="boton-azul rounded-4xl" href="#tiktok">TT</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom text-center p-4 bg-fondo-footer text-texto-footer border-t border-beige">
+            <p>&copy; 2025 Concrete Jungle. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Botón Sticky Cart (Móvil) -->
+    <button id="sticky-cart-mobile" class="sticky-cart">
+        <img src="../assets/logos/carrito_blanco.png" alt="Icono carrito de compras">
+        <span class="cart-count">2</span>
+    </button>
+
+
+
+    <!-- Modal del Carrito -->
+    <div class="carrito" id="carrito">
+        <!-- Header del Carrito -->
+        <div class="carrito-header">
+            <h2>Tu Carrito</h2>
+            <button id="close-cart">×</button>
+        </div>
+
+        <!-- Lista de Items -->
+        <ul class="carrito-items">
+            <!-- Fila de Encabezados (solo visible en tablet+) -->
+            <li class="carrito-item">
+                <span class="w-[90px]"></span>
+                <span class="nombre-producto">Nombre</span>
+                <span class="cantidad-container">Cantidad</span>
+                <span class="precio-producto">Precio</span>
+            </li>
+
+            <!-- Item 1 -->
+            <li class="carrito-item" id="carrito-item-1">
+                <img src="../assets/imagenes/foto1.jpg" alt="Producto 1">
+                <span class="nombre-producto">Sudadera Urban Style</span>
+                <div class="cantidad-container">
+                    <button class="restar-cantidad" data-producto="1">-</button>
+                    <span class="cantidad-producto">1</span>
+                    <button class="añadir-cantidad" data-producto="1">+</button>
+                </div>
+                <span class="precio-producto">49,99 €</span>
+            </li>
+
+            <!-- Item 2 -->
+            <li class="carrito-item" id="carrito-item-2">
+                <img src="../assets/imagenes/foto2.jpg" alt="Producto 2">
+                <span class="nombre-producto">Camiseta Concrete</span>
+                <div class="cantidad-container">
+                    <button class="restar-cantidad" data-producto="2">-</button>
+                    <span class="cantidad-producto">2</span>
+                    <button class="añadir-cantidad" data-producto="2">+</button>
+                </div>
+                <span class="precio-producto">24,99 €</span>
+            </li>
+        </ul>
+
+        <!-- Footer del Carrito -->
+        <div class="carrito-footer">
+            <p class="total-amount">Total: 99,97 €</p>
+            <button class="btn-checkout">Proceder al pago</button>
+        </div>
+    </div>
+    <script src="../JavaScript/menu.js"></script>
+    <script src="../JavaScript/producto.js"></script>
+</body>
+</html> 
