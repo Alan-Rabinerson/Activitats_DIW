@@ -1,0 +1,231 @@
+*{ /* Reset CSS */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body { 
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+    background: url(./assets/corcho.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+/* Estilos para los contenedores */
+.contenedores {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.contenedor {
+    border: 2px solid #000;
+    width: 18%;
+    height: 80vh;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: #000 2px 2px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor img {
+    width: 90px;
+    height: 90px;
+}
+
+#contenedor1{
+    background-color: #d1e7dd;
+}
+
+#contenedor2{
+    background-color: #f8eed7;
+}
+
+#contenedor3{
+    background-color: #f8d7da;
+}
+
+#crearPostit {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 200px;
+    background-color: #4853e8;
+    color: #f0f0f0;
+}
+/* Estilos para los postits */
+.postit {
+    width: 150px;
+    height: 30px;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Transiciones para animaciones */
+    transition: opacity 0.3s ease, transform 0.3s ease, height 0.25s ease, padding 0.2s ease;
+    
+}
+/* Estilos para la animación de eliminación */
+.postit.removing {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    height: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+/* Estilos internos del postit */
+.postit h3 {
+    margin-bottom: 5px;
+    font-size: 12px;
+    width: 100%;
+    cursor: text;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+
+.postit .descripcion {
+    font-size: 10px;
+    width: 100%;
+    height: 90%;
+    resize: none;
+    border: none;
+    outline: none;
+}       
+
+.postit:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
+}
+
+.postit.maximizado {
+    width: 150px;
+    height: 100px;
+    font-size: 14px;
+}
+
+.postit img, .pop-up-colores img  {
+    position: absolute;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 2px;
+    right: 45px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.minimizar {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.maximizar {
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+/* Estilos para el pop-up de selección de colores */
+.pop-up-colores{
+    display: none;
+}
+
+.pop-up-colores.active{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.pop-up-colores .colores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pop-up-colores .color{
+    width: 100%;
+    margin: 10px;
+    padding: 3px;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.pop-up-colores .color:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pop-up-colores #cerrarPopUp{
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+/* Estilos para el dialogo de confirmacion al cerrar un postit */
+.dialogo-cerrar {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.dialogo-cerrar button {
+    margin: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#confirmarCerrar {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}
+
+#cancelarCerrar {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
